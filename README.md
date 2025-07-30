@@ -3,29 +3,6 @@
 A machine learning project that predicts gemstone prices based on various attributes like carat, cut, color, clarity, etc. This project includes an end-to-end pipeline for data ingestion, transformation, model training, evaluation, and a Flask web application for real-time prediction.
 
 ---
-
-##  Project Structure
-
-Gemstone Price Prediction/
-├── app.py # Flask app entry point
-├── src/ # Core ML components and pipeline
-│ ├── components/ # Data ingestion, transformation, model trainer
-│ ├── pipeline/ # Training and prediction pipelines
-│ ├── exception.py # Custom exception class
-│ ├── logger.py # Logging utility
-│ └── utils.py # Reusable utility functions
-├── notebook/ # Jupyter Notebooks for EDA and experiments
-├── templates/ # HTML files for frontend
-├── static/ # CSS or JS files
-├── artifacts/ # Generated artifacts (models, data splits)
-├── logs/ # Log files
-├── requirements.txt # Python dependencies
-├── setup.py # For packaging the project
-├── .gitignore # Files/folders to ignore in git
-├── .github/workflows/ # GitHub Actions for CI
-│ └── main.yml
-└── README.md # Project overview
-
 ## Project Steps
 This project follows a modular, pipeline-driven workflow for building and deploying a machine learning model to predict gemstone prices.
 
@@ -63,3 +40,6 @@ A lightweight Flask app is created with a user-friendly interface.
 Users can input gemstone features via a web form.
 On submission, the backend loads the pre-trained model and returns a predicted price.
 Frontend is built with basic HTML/CSS inside the templates/ and static/ folders.
+
+# Result
+Random Forest Regressor was the best model with r2_score of 97
