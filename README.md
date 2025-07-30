@@ -7,39 +7,39 @@ A machine learning project that predicts gemstone prices based on various attrib
 This project follows a modular, pipeline-driven workflow for building and deploying a machine learning model to predict gemstone prices.
 
 # 1. Data Ingestion
-The raw dataset (gemstone.csv) is read using Pandas.
-The data is split into training and testing sets.
-Both splits are saved as .csv files in the artifacts/ directory for reproducibility.
-This logic is encapsulated inside a custom class-based pipeline (DataIngestion).
+- The raw dataset (gemstone.csv) is read using Pandas.
+- The data is split into training and testing sets.
+- Both splits are saved as .csv files in the artifacts/ directory for reproducibility.
+- This logic is encapsulated inside a custom class-based pipeline (DataIngestion).
 
 # 2. Data Transformation
-A custom ColumnTransformer pipeline is built to preprocess both numeric and categorical features.
-Numeric features:
-Missing values are handled using SimpleImputer(strategy='median').
-Features are standardized using StandardScaler.
-Categorical features:
-Missing values are filled using SimpleImputer(strategy='most_frequent').
-Categories are encoded using Ordinal Encoding.
-Features are scaled using StandardScaler.
-The entire preprocessing pipeline is saved as a .pkl file for later use during prediction.
+- A custom ColumnTransformer pipeline is built to preprocess both numeric and categorical features.
+# Numeric features:
+- Missing values are handled using SimpleImputer(strategy='median').
+- Features are standardized using StandardScaler.
+# Categorical features:
+- Missing values are filled using SimpleImputer(strategy='most_frequent').
+- Categories are encoded using Ordinal Encoding.
+- Features are scaled using StandardScaler.
+- The entire preprocessing pipeline is saved as a .pkl file for later use during prediction.
 
 # 3. Model Training
-Several regression models are trained with hyperparameter tuning and evaluated on the processed dataset.
-Random Forest was the best performing model
-The trained final model is saved as .pkl file.
+- Several regression models are trained with hyperparameter tuning and evaluated on the processed dataset.
+- Random Forest was the best performing model
+- The trained final model is saved as .pkl file.
 
 # 4. Prediction Pipeline
-The PredictionPipeline class handles:
-Input data transformation using the saved preprocessor.
-Model loading and prediction.
-Input data (from the web app) is converted to a DataFrame internally.
-The pipeline returns the predicted gemstone price to the user.
+- The PredictionPipeline class handles:
+- Input data transformation using the saved preprocessor.
+- Model loading and prediction.
+- Input data (from the web app) is converted to a DataFrame internally.
+- The pipeline returns the predicted gemstone price to the user.
 
 # 5. Flask Web Application
-A lightweight Flask app is created with a user-friendly interface.
-Users can input gemstone features via a web form.
-On submission, the backend loads the pre-trained model and returns a predicted price.
-Frontend is built with basic HTML/CSS inside the templates/ and static/ folders.
+- A lightweight Flask app is created with a user-friendly interface.
+- Users can input gemstone features via a web form.
+- On submission, the backend loads the pre-trained model and returns a predicted price.
+- Frontend is built with basic HTML/CSS inside the templates/ and static/ folders.
 
 # Result
-Random Forest Regressor was the best model with r2_score of 97
+- Random Forest Regressor was the best model with r2_score of 97
